@@ -1,8 +1,8 @@
 import java.awt.Graphics;
 
 public class Point {
-    private int x;
-    private int y;
+    int x;
+    int y;
 
 //    public Point() {
 //        // initialize variables here
@@ -28,22 +28,14 @@ public class Point {
         y += dy;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setLocation(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
     public double distanceTo(Point p) {
-        return Math.sqrt((p.getX() - x)^2 + (p.getY() - y)^2);
+        return Math.sqrt((p.x - x)^2 + (p.y - y)^2);
     }
+	
+	public void setLocation(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 
     public String toString() {
         return "(" + x + ", " + y + ")";

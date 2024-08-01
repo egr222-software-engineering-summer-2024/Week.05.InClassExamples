@@ -13,6 +13,14 @@ public class Point {
         y = initialY;
     }
 
+    public Point(double r, int angleInDegrees) {
+        this((int) (r * Math.cos(Math.toRadians(angleInDegrees))), (int) (r* Math.sin(Math.toRadians(angleInDegrees))));
+    }
+
+    public Point(double r, double angleInRadians) {
+        this((int) (r * Math.cos(angleInRadians)), (int) (r* Math.sin(angleInRadians)));
+	}
+
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
@@ -30,4 +38,13 @@ public class Point {
         x += dx;
         y += dy;
     }
+
+    public double distanceTo(Point p) {
+        return Math.sqrt((p.x - x)^2 + (p.y - y)^2);
+    }
+	
+	public void setLocation(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 }

@@ -29,9 +29,9 @@ public class Point {
         return y;
     }
 
-    public void setLocation(int newX, int newY) {
-        x = newX;
-        y = newY;
+    public void setLocation(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public String toString() {
@@ -51,4 +51,13 @@ public class Point {
         x += dx;
         y += dy;
     }
+
+    public double distanceTo(Point p) {
+        return Math.sqrt((p.getX() - x)^2 + (p.getY() - y)^2);
+    }
+	
+	public void setLocation(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 }
