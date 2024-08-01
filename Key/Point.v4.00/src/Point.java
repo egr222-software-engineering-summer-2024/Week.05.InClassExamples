@@ -13,10 +13,12 @@ public class Point {
         this(0,0);
     }
 
+	// constructor using polar coordinates (degrees)
     public Point(double r, int angleInDegrees) {
         this((int) (r * Math.cos(Math.toRadians(angleInDegrees))), (int) (r* Math.sin(Math.toRadians(angleInDegrees))));
     }
 
+	// constructor using polar coordinates (radians)
     public Point(double r, double angleInRadians) {
         this((int) (r * Math.cos(angleInRadians)), (int) (r* Math.sin(angleInRadians)));
     }

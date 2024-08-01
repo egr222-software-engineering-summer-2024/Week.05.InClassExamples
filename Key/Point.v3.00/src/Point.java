@@ -13,13 +13,15 @@ public class Point {
         y = initialY;
     }
 
+	// constructor using polar coordinates (degrees)
     public Point(double r, int angleInDegrees) {
         this((int) (r * Math.cos(Math.toRadians(angleInDegrees))), (int) (r* Math.sin(Math.toRadians(angleInDegrees))));
     }
 
+	// constructor using polar coordinates (radians)
     public Point(double r, double angleInRadians) {
         this((int) (r * Math.cos(angleInRadians)), (int) (r* Math.sin(angleInRadians)));
-	}
+    }
 
     public String toString() {
         return "(" + x + ", " + y + ")";

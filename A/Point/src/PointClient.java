@@ -16,9 +16,12 @@ public class PointClient {
         Point p3 = new Point(-5, -1);
         //p3.x = -5;
 
+        Point p4 = new Point();
+
         System.out.println(p1);
         System.out.println(p2);
         System.out.println(p3);
+        System.out.println(p4);
 
         // move p2 and then print it
         p2.translate(2,1);
