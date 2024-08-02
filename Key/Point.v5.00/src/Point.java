@@ -65,26 +65,29 @@ public class Point {
 
     public static void drawEarthquakeOrigin(Graphics g) {
         if (earthquakeOrigin != null) {
+			int earthquakeX = earthquakeOrigin.getX();
+			int earthquakeY = earthquakeOrigin.getY();
+			
             g.setColor(Color.red);
 
             // draw point defining earthquake epicenter
-            g.fillOval(earthquakeOrigin.x, earthquakeOrigin.y, 3,3);
+            g.fillOval(earthquakeX, earthquakeY, 3,3);
 
             int earthquakeCircleRadius = 5;
 
             while (earthquakeCircleRadius <= earthquakeImpactRadius) {
-                g.drawOval(earthquakeOrigin.x - earthquakeCircleRadius, 
-					earthquakeOrigin.y - earthquakeCircleRadius, 
-					2*earthquakeCircleRadius, 2*earthquakeCircleRadius);
+                g.drawOval(earthquakeX - earthquakeCircleRadius, 
+					earthquakeY - earthquakeCircleRadius, 
+					2 * earthquakeCircleRadius, 2 * earthquakeCircleRadius);
 					
                 earthquakeCircleRadius += 5;
             }
 
-            g.drawOval(earthquakeOrigin.x - earthquakeImpactRadius, 
-				earthquakeOrigin.y - earthquakeImpactRadius, 
-				2 * earthquakeImpactRadius, 
-				2 * earthquakeImpactRadius);
-            g.drawString(earthquakeOrigin.toString(), earthquakeOrigin.x + 5, earthquakeOrigin.y + 5);
+            g.drawOval(earthquakeX - earthquakeImpactRadius, 
+				earthquakeY - earthquakeImpactRadius, 
+				2 * earthquakeImpactRadius, 2 * earthquakeImpactRadius);
+				
+            g.drawString(earthquakeOrigin.toString(), earthquakeX + 5, earthquakeY + 5);
         }
     }
 
