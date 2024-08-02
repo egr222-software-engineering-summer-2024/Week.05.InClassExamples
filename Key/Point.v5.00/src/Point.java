@@ -46,8 +46,8 @@ public class Point {
         earthquakeOrigin  = p;
     }
 
-    public static void setEarthquakeImpactRadius(int d) {
-        earthquakeImpactRadius = d;
+    public static void setEarthquakeImpactRadius(int r) {
+        earthquakeImpactRadius = r;
     }
 
     public String toString() {
@@ -73,10 +73,17 @@ public class Point {
             int earthquakeCircleRadius = 5;
 
             while (earthquakeCircleRadius <= earthquakeImpactRadius) {
-                g.drawOval(earthquakeOrigin.x - earthquakeCircleRadius, earthquakeOrigin.y - earthquakeCircleRadius, 2*earthquakeCircleRadius,2*earthquakeCircleRadius);
+                g.drawOval(earthquakeOrigin.x - earthquakeCircleRadius, 
+					earthquakeOrigin.y - earthquakeCircleRadius, 
+					2*earthquakeCircleRadius, 2*earthquakeCircleRadius);
+					
                 earthquakeCircleRadius += 5;
             }
 
+            g.drawOval(earthquakeOrigin.x - earthquakeImpactRadius, 
+				earthquakeOrigin.y - earthquakeImpactRadius, 
+				2 * earthquakeImpactRadius, 
+				2 * earthquakeImpactRadius);
             g.drawString(earthquakeOrigin.toString(), earthquakeOrigin.x + 5, earthquakeOrigin.y + 5);
         }
     }
@@ -91,8 +98,8 @@ public class Point {
     }
 
     public double distanceFromEarthquakeOrigin() {
-        int deltaX = x - earthquakeOrigin.x;
-        int deltaY = y - earthquakeOrigin.y;
+        int deltaX = x - earthquakeOrigin.getX();
+        int deltaY = y - earthquakeOrigin.getY();
         return Math.sqrt( deltaX * deltaX + deltaY * deltaY );
     }
 }

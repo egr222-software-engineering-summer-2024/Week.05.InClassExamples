@@ -7,33 +7,28 @@ public class PointClient {
         DrawingPanel panel = new DrawingPanel(300, 300);
         Graphics g = panel.getGraphics();
 
-        Point p1 = new Point(50, 65);
-//	    p1.x = 50;
-//	    p1.y = 65;
-        Point p2 = new Point(104,83);
-//	    p2.x = 104;
-//	    p2.y = 83;
-        Point p3 = new Point(-5, -1);
-        //p3.x = -5;
+        Point.setEarthquakeOrigin(new Point(250, 250));
+        Point.setEarthquakeImpactRadius(160);
 
-        Point p4 = new Point();
+        Point p1 = new Point(50, 65);
+        Point p2 = new Point(104,83);
+        Point p3 = new Point(154, 75);
+        Point p4 = new Point(280, 280);
 
         System.out.println(p1);
         System.out.println(p2);
         System.out.println(p3);
         System.out.println(p4);
 
-        // move p2 and then print it
-        p2.translate(2,1);
-
-        System.out.println(p2);
-
+        Point.drawEarthquakeOrigin(g);
         p1.draw(g);
         p2.draw(g);
+        p3.draw(g);
+        p4.draw(g);
 
-        System.out.println("P1 is " + p1.distanceFromOrigin() + " from the origin.");
-        System.out.println("P2 is " + p2.distanceFromOrigin() + " from the origin.");
-
-        System.out.println("Distance from P1 to P2 is " + p1.distanceTo(p2));
+        System.out.println("P1 is " + p1.distanceFromEarthquakeOrigin() + " from the earthquake origin.");
+        System.out.println("P2 is " + p2.distanceFromEarthquakeOrigin() + " from the earthquake origin.");
+        System.out.println("P3 is " + p3.distanceFromEarthquakeOrigin() + " from the earthquake origin.");
+        System.out.println("P4 is " + p4.distanceFromEarthquakeOrigin() + " from the earthquake origin.");
     }
 }
